@@ -5,13 +5,17 @@ class CounterController < ApplicationController
   end
 
   def counter
-    list = Magick.ImageList.new
-    for i in 0...9
-      img = Magick::Image.read(File.expand_path("app/assets/images/nekomimi/#{i}.gif", Rails.root)).first
-      list.concat(img)
+    count = 4644;
+
+    images = []
+    for n in count.to_s.split(//u)
+      images << File.expand_path("app/assets/images/nekomimi/#{n}.gif", Rails.root)
     end
-    list.append(false)
-    self.content_type = img.mime_type
-    self.response_body = img.to_blob
+
+    list = Magick::ImageList.new(*images)
+    image = list.append(false)
+
+    self.content_type = image.mime_type
+    self.response_body = image.to_blob
   end
 end
