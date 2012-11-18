@@ -1,0 +1,77 @@
+@import url(http://fonts.googleapis.com/css?family=Fugaz+One|Cinzel+Decorative)
+
+a
+  text-decoration: none
+  &:link
+    color: #0066fa
+  &:visited
+    color: #0066fa
+  &:hover
+    color: #3399fd
+  &:active
+    color: #3399fd
+
+body
+  background-image: image-url('background.jpg')
+  color: #333
+
+.wrapper
+  width: 750px 
+  margin: 0 auto
+
+h1
+  font-family: 'Fugaz One', cursive
+  text-align: center
+  font-size: 5em
+  //font-weight: normal
+  color: #0066fa
+  margin: 0
+
+.blast-words
+  font-family: 'Cinzel Decorative', cursive
+  text-align: center
+  color: #3399fd
+  margin-top: -1em
+
+.counter
+  @include zurui-gradient-top-lighten
+  @include zurui-box-outer
+  @include border-radius(8px)
+  padding: 24px
+  display: block
+  margin: auto
+
+h2
+  color: #0066fa
+
+code
+  @include zurui-box-outer
+  @include border-radius(3px)
+  font-family: 'Consolas', 'Liberation Mono', 'Courier', 'monospace'
+  background-color: #f8f8f8
+  padding: 0 5px
+  margin: 0 2px
+  white-space: nowrap
+
+.footer
+  @include zurui-line-top
+  position: relative
+  overflow: hidden
+  ul
+    position: relative
+    left: 50%
+    float: left
+    margin: 0.5em 0 4em 0
+    padding: 0
+    li
+      float: left
+      position: relative
+      left: -50%
+      list-style: none
+      margin: 0
+      padding: 0
+      font-family: 'Cinzel Decorative', cursive
+      &:not(:first-child)
+        &:before
+          content: '/'
+          margin: 0 0.5em
