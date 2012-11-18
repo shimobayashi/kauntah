@@ -56,6 +56,6 @@ Kauntah::Application.routes.draw do
   # Note: This route will make all actions in every controller accessible via GET requests.
   # match ':controller(/:action(/:id))(.:format)'
 
-  root :to => 'counter#index'
-  match 'counter' => 'counter#counter'
+  root :to => 'counters#index'
+  match 'counter' => 'counters#counter'
 end

@@ -1,0 +1,31 @@
+<p class="blast-words">World easiest access counter</p>
+<img src="<%= url_for :controller => :counters, :action => :counter, :offset => 0 %>" class="counter" />
+
+<h2>Installation</h2>
+<p>
+  Insert this html tag to your page:
+  <code>&lt;img src="http://kauntah.herokuapp.com/counter?offset=0" /&gt;</code>
+</p>
+<p>It's all!</p>
+
+<h2>How it works</h2>
+<p>
+  Kauntah responds as GIF image through your img tag.
+  Then Kauntah extract FQDN from HTTP referer.
+  That decides your own access counter.
+</p>
+<p>So you must have your own FQDN for your website.</p>
+
+<h2>Latest Kauntah users</h2>
+<ul>
+  <% for counter in @counters %>
+    <li><a href="http://<%= counter.owner %>/"><%= counter.owner %></a></li>
+  <% end %>
+</ul>
+
+<div class="footer">
+  <ul>
+    <li><a href="https://github.com/shimobayashi/kauntah">Project page</a></li>
+    <li><a href="http://www.shimobayashi.name/">Author website</a></li>
+  </ul>
+</div>

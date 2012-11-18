@@ -1,14 +1,17 @@
 <!DOCTYPE html>
 <html>
 <head>
-  <title>Kauntah</title>
+  <title>Kauntah - World easiest access counter</title>
   <%= stylesheet_link_tag    "application", :media => "all" %>
   <%= javascript_include_tag "application" %>
   <%= csrf_meta_tags %>
 </head>
 <body>
 
-<%= yield %>
+  <div class="wrapper">
+    <h1>Kauntah</h1>
+    <%= yield %>
+  </div>
 
 </body>
 </html>
