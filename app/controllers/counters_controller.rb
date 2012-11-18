@@ -11,6 +11,7 @@ class CountersController < ApplicationController
     owner = $1
     logger.info "owner: #{owner}"
     counter = Counter.find_by_owner(owner) || Counter.new(:owner => owner)
+    counter.count += 1
     offset = params[:offset] ? params[:offset].to_i : 0
     count = counter.count + offset
 
@@ -27,8 +28,6 @@ class CountersController < ApplicationController
       logger.info "cached: #{key}"
     end
 
-    # Increment
-    counter.count += 1
     counter.save!
 
     # Response
