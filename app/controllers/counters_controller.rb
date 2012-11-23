@@ -31,6 +31,7 @@ class CountersController < ApplicationController
     counter.save!
 
     # Response
+    self.headers['Cache-Control'] = 'no-store'
     self.content_type = image.mime_type
     self.response_body = image.to_blob
   end
